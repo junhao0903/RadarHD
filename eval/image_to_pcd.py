@@ -5,6 +5,7 @@ import glob, os
 import cv2
 import numpy as np
 import open3d as o3d
+from tqdm import tqdm
 
 params = {
     'model_name': '13',
@@ -64,7 +65,7 @@ epoch = '%03d' % params['epoch_num']
 x_axis_grid = np.linspace(0,RMAX,RBINS)
 y_axis_grid = np.linspace(-RMAX,RMAX,ABINS)
 
-for traj in trajs:
+for traj in tqdm(trajs):
     TRAJ_DIR = traj + '/'
     EPOCH_DIR = TRAJ_DIR + epoch + '/'
     PRED_DIR = EPOCH_DIR + 'pred/' 

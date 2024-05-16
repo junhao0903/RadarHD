@@ -6,7 +6,7 @@ import numpy as np
 import glob as glob
 import sys
 import os
-
+from tqdm import tqdm
 params = {
     'model_name': '13',
     'expt': 1,
@@ -58,7 +58,7 @@ y_axis_grid = np.linspace(-RMAX,RMAX,ABINS)
 
 # Convert pol to cartesian
 files = sorted(glob.glob(img_dir + '*'))
-for file in files:
+for file in tqdm(files):
     name = file[file.rfind('/')+1:-4]
     a = Image.open(file)
     a = np.asarray(a)
@@ -76,7 +76,7 @@ trajs = set(traj_num)
 epoch_num = [file[file.rfind('/')+1:file.rfind('/')+4] for file in files]
 epochs = set(epoch_num)
 
-for traj in trajs:
+for traj in tqdm(trajs):
     TRAJ_DIR = save_path + traj + '/'
     if not os.path.exists(TRAJ_DIR):
         os.makedirs(TRAJ_DIR)  

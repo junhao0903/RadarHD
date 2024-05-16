@@ -12,6 +12,7 @@ from torchsummary import summary
 
 from train_test_utils.dataloader import *
 from train_test_utils.model import *
+from tqdm import tqdm
 
 """
 ## Constants. Edit this to change the model to test on.
@@ -78,7 +79,7 @@ def main():
     gen.eval()
 
     t0 = time.time()
-    for test_i, (test_data, test_label) in enumerate(test_loader):
+    for test_i, (test_data, test_label) in tqdm(enumerate(test_loader), total=len(test_loader)):
 
         test_data, test_label = test_data.to(device), test_label.to(device)
         with torch.no_grad():
@@ -96,8 +97,6 @@ def main():
             im1 = Image.fromarray(label)
             im1_file_name = save_path + epoch_num + '_' + ordered_filename[test_i] + '_label.png'
             im1.save(im1_file_name)
-            
-            print(ordered_filename[test_i])
 
     t1 = time.time()
     print('Time taken for inference: ' ,t1 - t0)
