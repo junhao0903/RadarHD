@@ -21,7 +21,7 @@ from tqdm import tqdm
 params = {
     'model_name': '13',
     'expt': 1,
-    'dt': '20220320-034822',
+    'dt': '20240524-192545',
     'epoch_num': 120,
     'data': 5,
     'gpu': 1,
@@ -29,7 +29,7 @@ params = {
 
 def dataloader(train_params):
     print('Loading data')
-    basepath = './dataset_' + str(params['data']) + '/'
+    basepath = '/home/adt/deeplearning/Data/RadarHD_hw/'
 
     orig_size = [256, 64, 512]
     reqd_size = [256, 64, 512]

@@ -33,7 +33,7 @@ params = {
     'model_caption': 'unet 1.',
     'expt_caption': '',
     'data': 5,
-    'history': 40,
+    'history': 20,
     'reload': False,
     'reload_namestr': '',
     'reload_epoch': -1,
@@ -133,7 +133,7 @@ def main():
 # ****************************  DATALOADER ******************************
 
 print('Loading data')
-basepath = './dataset_' + str(params['data']) + '/'
+basepath = '/home/adt/deeplearning/Data/RadarHD_hw/'
 
 orig_size = [256, 64, 512]
 reqd_size = [256, 64, 512]  

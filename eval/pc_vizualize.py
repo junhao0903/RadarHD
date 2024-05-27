@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import open3d as o3d
 
-root_folder = './processed_imgs_13_1_20220320-034822_test_imgs/'
+root_folder = './processed_imgs_13_1_20240524-192545_test_imgs/'
 epoch = '120'
 
 for traj in os.listdir(root_folder):
@@ -27,16 +27,16 @@ for traj in os.listdir(root_folder):
         ax1.scatter(label[:, 1], label[:, 0])
         ax1.set_title(f'Traj No {traj} Label')
         ax1.set_aspect('equal', adjustable='box')
-        ax1.set_xlim([-10.8, 10.8])
-        ax1.set_ylim([0, 10.8])
+        ax1.set_xlim([-50, 50])
+        ax1.set_ylim([0, 50])
         ax1.grid(True)
 
         ax2 = fig.add_subplot(122)
         ax2.scatter(pred[:, 1], pred[:, 0])
         ax2.set_title(f'Traj No {traj} RadarHD')
         ax2.set_aspect('equal', adjustable='box')
-        ax2.set_xlim([-10.8, 10.8])
-        ax2.set_ylim([0, 10.8])
+        ax2.set_xlim([-50, 50])
+        ax2.set_ylim([0, 50])
         ax2.grid(True)
 
         plt.pause(0.01)

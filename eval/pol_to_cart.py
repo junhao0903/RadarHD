@@ -10,11 +10,11 @@ from tqdm import tqdm
 params = {
     'model_name': '13',
     'expt': 1,
-    'dt': '20220320-034822',
+    'dt': '20240524-192545',
     'epoch_num': 120,
 }
 
-RMAX = 10.8
+RMAX = 50
 RBINS = 256
 ABINS = 512
 
